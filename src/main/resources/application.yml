@@ -1,0 +1,35 @@
+spring:
+  devtools:
+    livereload:
+      enabled: true
+  datasource:
+    url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Seoul
+    username: park
+    password: 1234
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  servlet:
+    multipart:
+      max-file-size: 1MB
+      max-request-size: 10MB
+
+
+file: /Users/qkrtjdan/Desktop/code/spring_study/spring_boot_starter/src/main/resources/static/
+
+jwt:
+  HEADER: Authorization
+  SECRET_KEY: SECRET_KEY_SECRET_KEY_SECRET_KEY_SECRET_KEY_SECRET_KEY_SECRET_KEY_SECRET_KEY_SECRET_KEY_SECRET_KEY_SECRET_KEY_SECRET_KEY_SECRET_KEY
+  TOKEN_VALIDATE_TIME: 604800000
+
+mybatis:
+  config-location: classpath:config/mybatis.xml
+
+log:
+  config:
+    path: /Users/qkrtjdan/Desktop/code/spring_study/logs/local/
+    filename: local_log
+
+
+server:
+  port: 8000
