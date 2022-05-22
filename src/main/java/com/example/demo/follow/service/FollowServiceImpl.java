@@ -22,6 +22,11 @@ public class FollowServiceImpl implements FollowService{
     }
 
     @Override
+    public List<FollowUserDto> getFollowerByOne(FollowDto followDto) {
+        return followMapper.getFollowerByOne(followDto);
+    }
+
+    @Override
     public Integer insertFollow(FollowDto followDto) {
         return followMapper.insertFollow(followDto);
     }

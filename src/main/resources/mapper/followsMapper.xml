@@ -20,6 +20,14 @@
         INNER JOIN users as u ON f.follower = u.id
         WHERE following = #{followingId}
     </select>
+    <select id="getFollowerByOne" resultType="FollowUserDto" parameterType="FollowDto" >
+        SELECT
+        u.id, u.name, u.img
+        FROM
+        follows as f
+        INNER JOIN users as u ON f.follower = u.id
+        WHERE following = #{following} and follower = #{follower}
+    </select>
     <insert id="insertFollow" parameterType="FollowDto" useGeneratedKeys="true"
             keyProperty="id" keyColumn="id">
         INSERT INTO

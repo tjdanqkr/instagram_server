@@ -67,7 +67,7 @@
         INNER JOIN
             follows f
         ON
-            f.following = p.userId and f.follower = #{id}
+            f.follower = p.userId and f.following = #{id}
         WHERE
             p.userId != #{id}
     </select>

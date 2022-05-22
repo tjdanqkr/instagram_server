@@ -9,6 +9,8 @@ public interface FollowService {
 
     List<FollowUserDto> getFollowing(Integer followerId);
     List<FollowUserDto> getFollower(Integer followingId);
+
+    List<FollowUserDto> getFollowerByOne(FollowDto followDto);
     Integer insertFollow(FollowDto followDto);
     Integer deleteFollow(FollowDto followDto);
 }

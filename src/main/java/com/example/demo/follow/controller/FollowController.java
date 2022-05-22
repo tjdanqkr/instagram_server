@@ -36,22 +36,26 @@ public class FollowController {
     }
     @GetMapping("/follower/{id}")
     public List<FollowUserDto> getFollower(@PathVariable("id") String id){
-        return followService.getFollower(Integer.valueOf(id));
+        FollowDto followDto = new FollowDto();
+        Integer myId = Integer.valueOf(securityService.getSubject(securityService.getToken()));
+        followDto.setFollower(Integer.valueOf(id));
+        followDto.setFollowing(myId);
+        return followService.getFollowerByOne(followDto);
     }
     @PostMapping("/{id}")
     public Integer insertFollow(@PathVariable("id") String id ){
         FollowDto followDto =new FollowDto();
         Integer myId = Integer.valueOf(securityService.getSubject(securityService.getToken()));
-        followDto.setFollowing(Integer.valueOf(id));
-        followDto.setFollower(myId);
+        followDto.setFollower(Integer.valueOf(id));
+        followDto.setFollowing(myId);
         return followService.insertFollow(followDto);
     }
     @DeleteMapping("/{id}")
     public Integer deleteFollow(@PathVariable("id") String id){
         FollowDto followDto =new FollowDto();
         Integer myId = Integer.valueOf(securityService.getSubject(securityService.getToken()));
-        followDto.setFollower(myId);
-        followDto.setFollowing(Integer.valueOf(id));
+        followDto.setFollowing(myId);
+        followDto.setFollower(Integer.valueOf(id));
         return followService.deleteFollow(followDto);
     }
 

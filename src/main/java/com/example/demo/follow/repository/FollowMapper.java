@@ -10,6 +10,7 @@ import java.util.List;
 public interface FollowMapper {
     List<FollowUserDto> getFollowing(Integer followerId);
     List<FollowUserDto> getFollower(Integer followingId);
+    List<FollowUserDto> getFollowerByOne(FollowDto followDto);
     Integer insertFollow(FollowDto followDto);
     Integer deleteFollow(FollowDto followDto);
 }
