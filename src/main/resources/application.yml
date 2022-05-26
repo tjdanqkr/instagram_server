@@ -30,5 +30,6 @@ log:
     path: /Users/qkrtjdan/Desktop/code/spring_study/logs/local/
     filename: local_log
 
+
 server:
   port: 8000
